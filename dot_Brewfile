@@ -1,0 +1,27 @@
+# Intentionally curated restore set for this machine.
+# Keep this focused on the tools and apps that are painful to recreate by hand.
+
+# Dotfiles/bootstrap tooling
+brew "chezmoi"
+brew "git"
+brew "gh"
+brew "jq"
+brew "wget"
+
+# Shell and terminal workflow
+brew "deno"
+brew "eza"
+brew "navi"
+brew "python@3.12"
+brew "starship"
+
+# Common development tooling worth restoring on a fresh machine
+brew "cocoapods"
+brew "docker"
+brew "docker-buildx"
+brew "docker-compose"
+
+# Apps closely tied to this repo or daily workflow
+cask "alt-tab"
+cask "copilot-cli"
+cask "wezterm"

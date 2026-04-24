@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -eu
+
+if [ "$(uname -s)" != "Darwin" ]; then
+  exit 0
+fi
+
+if command -v brew >/dev/null 2>&1; then
+  exit 0
+fi
+
+if ! xcode-select -p >/dev/null 2>&1; then
+  echo "Xcode Command Line Tools are required before Homebrew can be installed."
+  echo "Run 'xcode-select --install', finish the installation, and rerun 'chezmoi apply'."
+  exit 1
+fi
+
+echo "Installing Homebrew..."
+NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
